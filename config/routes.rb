@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   get 'splash_page/index'
   resources :entities
   resources :groups
