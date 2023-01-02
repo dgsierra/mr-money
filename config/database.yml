@@ -15,6 +15,7 @@
 # gem "pg"
 #
 default: &default
+  url: <%= ENV["DATABASE_DEFAULT_URL"] %>
   adapter: postgresql
   encoding: unicode
   # For details on connection pooling, see Rails configuration guide
@@ -24,6 +25,8 @@ default: &default
 development:
   <<: *default
   database: mr_money_development
+  username: <%= ENV["DEFAULT_USR_DB"] %>
+  password: <%= ENV["DEFAULT_PW_DB"] %>
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -58,6 +61,8 @@ development:
 test:
   <<: *default
   database: mr_money_test
+  username: <%= ENV["DEFAULT_USR_DB"] %>
+  password: <%= ENV["DEFAULT_PW_DB"] %>
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
