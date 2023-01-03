@@ -61,6 +61,7 @@ development:
 test:
   <<: *default
   database: mr_money_test
+  url: <%= ENV["DATABASE_URL"] %>
   username: <%= ENV["DEFAULT_USR_DB"] %>
   password: <%= ENV["DEFAULT_PW_DB"] %>
 
